@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aura Mist Studio — Order & Checkout</title>
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#445646",
+            "on-primary": "#ffffff",
+            "primary-container": "#5c6e5d",
+            "primary-fixed": "#d4e8d3",
+            "secondary": "#8d4d38",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#fdaa8f",
+            "secondary-fixed": "#ffdbd0",
+            "surface": "#f8faf6",
+            "on-surface": "#191c1a",
+            "on-surface-variant": "#434842",
+            "surface-container": "#edeeeb",
+            "surface-container-low": "#f3f4f0",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e7e9e5",
+            "surface-variant": "#e1e3df",
+            "outline": "#747872"
+          },
+          fontFamily: {
+            display: ["EB Garamond", "serif"],
+            serif: ["EB Garamond", "serif"],
+            body: ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased">
+
+  <!-- GLOBAL HEADER -->
+  <header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-sm">
+    <div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6">
+      
+      <a href="index.html" class="flex items-center gap-3 shrink-0">
+        <div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-[20px]">spa</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="font-serif text-2xl text-on-surface tracking-tight font-medium">Aura Mist</span>
+          <span class="text-[11px] uppercase tracking-widest text-primary font-semibold px-1.5 py-0.5 bg-primary-fixed rounded">STUDIO</span>
+        </div>
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-1">
+        <a href="index.html" class="px-3.5 py-2 rounded-full text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Home</a>
+        <a href="product.html" class="px-3.5 py-2 rounded-full text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Product Detail</a>
+        <a href="order.html" class="px-3.5 py-2 rounded-full bg-surface-container text-primary font-semibold text-sm">Order Aura Mist</a>
+      </nav>
+
+      <div class="flex items-center gap-3 shrink-0">
+        <button type="button" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface text-sm transition-colors">
+          <span class="material-symbols-outlined text-[18px] text-primary">shopping_bag</span>
+          <span class="font-semibold">Cart (1)</span>
+        </button>
+
+        <a href="order.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-secondary text-on-secondary font-semibold text-sm shadow hover:bg-secondary/90 transition-all">
+          Get Aura Mist — $129
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN ORDER PAGE CONTENT -->
+  <main class="w-full pt-20">
+
+    <!-- ORDER HERO & BUNDLE SELECTOR (Commit 1) -->
+    <section class="w-full bg-surface py-12">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <header class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs uppercase tracking-widest text-secondary font-semibold">Secure Express Checkout</span>
+          <h1 class="mt-2 font-serif text-3xl sm:text-4xl text-on-surface">Configure Your Aura Mist Set</h1>
+          <p class="mt-2 text-sm text-on-surface-variant">
+            Select your bundle edition below and customize your initial organic pod selection.
+          </p>
+        </header>
+
+        <!-- Bundle Selection Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          
+          <div onclick="selectBundle('single', 129)" id="bundle-single" class="cursor-pointer rounded-3xl bg-surface-container-lowest p-6 border-2 border-primary shadow-sm flex flex-col justify-between transition-all">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-primary">Standard Set</span>
+                <span class="inline-block h-3 w-3 rounded-full bg-primary"></span>
+              </div>
+              <h3 class="font-serif text-2xl text-on-surface mt-2">Single Diffuser</h3>
+              <p class="text-xs text-on-surface-variant mt-1">Includes 1 Ceramic Smart Diffuser + 2 Organic Pods</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between">
+              <span class="font-serif text-2xl font-bold text-on-surface">$129</span>
+              <span class="text-xs text-primary font-semibold">In Stock</span>
+            </div>
+          </div>
+
+          <div onclick="selectBundle('duo', 219)" id="bundle-duo" class="cursor-pointer rounded-3xl bg-surface-container-lowest p-6 border-2 border-transparent hover:border-outline-variant shadow-sm flex flex-col justify-between transition-all">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-secondary">Most Popular</span>
+                <span class="text-[10px] font-bold bg-secondary-fixed text-secondary px-2 py-0.5 rounded-full">SAVE $39</span>
+              </div>
+              <h3 class="font-serif text-2xl text-on-surface mt-2">Duo Sanctuary Pack</h3>
+              <p class="text-xs text-on-surface-variant mt-1">2 Diffusers + 4 Organic Pods for Bedroom & Living Space</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between">
+              <span class="font-serif text-2xl font-bold text-on-surface">$219</span>
+              <span class="text-xs text-on-surface-variant line-through">$258</span>
+            </div>
+          </div>
+
+          <div onclick="selectBundle('trio', 299)" id="bundle-trio" class="cursor-pointer rounded-3xl bg-surface-container-lowest p-6 border-2 border-transparent hover:border-outline-variant shadow-sm flex flex-col justify-between transition-all">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-outline">Complete Home</span>
+                <span class="text-[10px] font-bold bg-primary-fixed text-primary px-2 py-0.5 rounded-full">SAVE $88</span>
+              </div>
+              <h3 class="font-serif text-2xl text-on-surface mt-2">Whole Home Suite</h3>
+              <p class="text-xs text-on-surface-variant mt-1">3 Diffusers + 6 Organic Pods + Free Wall Mounts</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between">
+              <span class="font-serif text-2xl font-bold text-on-surface">$299</span>
+              <span class="text-xs text-on-surface-variant line-through">$387</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+     
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aura Mist Studio — Order & Checkout</title>
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#445646",
+            "on-primary": "#ffffff",
+            "primary-container": "#5c6e5d",
+            "primary-fixed": "#d4e8d3",
+            "secondary": "#8d4d38",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#fdaa8f",
+            "secondary-fixed": "#ffdbd0",
+            "surface": "#f8faf6",
+            "on-surface": "#191c1a",
+            "on-surface-variant": "#434842",
+            "surface-container": "#edeeeb",
+            "surface-container-low": "#f3f4f0",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e7e9e5",
+            "surface-variant": "#e1e3df",
+            "outline": "#747872"
+          },
+          fontFamily: {
+            display: ["EB Garamond", "serif"],
+            serif: ["EB Garamond", "serif"],
+            body: ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased">
+
+  <!-- GLOBAL HEADER -->
+  <header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-sm">
+    <div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6">
+      
+      <a href="index.html" class="flex items-center gap-3 shrink-0">
+        <div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-[20px]">spa</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="font-serif text-2xl text-on-surface tracking-tight font-medium">Aura Mist</span>
+          <span class="text-[11px] uppercase tracking-widest text-primary font-semibold px-1.5 py-0.5 bg-primary-fixed rounded">STUDIO</span>
+        </div>
+      </a>
+
+      <nav class="hidden xl:flex items-center gap-1">
+        <a href="index.html" class="px-3.5 py-2 rounded-full text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Home</a>
+        <a href="product.html" class="px-3.5 py-2 rounded-full text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Product Detail</a>
+        <a href="order.html" class="px-3.5 py-2 rounded-full bg-surface-container text-primary font-semibold text-sm">Order Aura Mist</a>
+      </nav>
+
+      <div class="flex items-center gap-3 shrink-0">
+        <button type="button" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface text-sm transition-colors">
+          <span class="material-symbols-outlined text-[18px] text-primary">shopping_bag</span>
+          <span class="font-semibold">Cart (1)</span>
+        </button>
+
+        <a href="order.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-secondary text-on-secondary font-semibold text-sm shadow hover:bg-secondary/90 transition-all">
+          Get Aura Mist — $129
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN ORDER PAGE CONTENT -->
+  <main class="w-full pt-20">
+
+    <!-- ORDER HERO & BUNDLE SELECTOR (Commit 1) -->
+    <section class="w-full bg-surface py-12">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <header class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-xs uppercase tracking-widest text-secondary font-semibold">Secure Express Checkout</span>
+          <h1 class="mt-2 font-serif text-3xl sm:text-4xl text-on-surface">Configure Your Aura Mist Set</h1>
+          <p class="mt-2 text-sm text-on-surface-variant">
+            Select your bundle edition below and customize your initial organic pod selection.
+          </p>
+        </header>
+
+        <!-- Bundle Selection Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          
+          <div onclick="selectBundle('single', 129)" id="bundle-single" class="cursor-pointer rounded-3xl bg-surface-container-lowest p-6 border-2 border-primary shadow-sm flex flex-col justify-between transition-all">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-primary">Standard Set</span>
+                <span class="inline-block h-3 w-3 rounded-full bg-primary"></span>
+              </div>
+              <h3 class="font-serif text-2xl text-on-surface mt-2">Single Diffuser</h3>
+              <p class="text-xs text-on-surface-variant mt-1">Includes 1 Ceramic Smart Diffuser + 2 Organic Pods</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between">
+              <span class="font-serif text-2xl font-bold text-on-surface">$129</span>
+              <span class="text-xs text-primary font-semibold">In Stock</span>
+            </div>
+          </div>
+
+          <div onclick="selectBundle('duo', 219)" id="bundle-duo" class="cursor-pointer rounded-3xl bg-surface-container-lowest p-6 border-2 border-transparent hover:border-outline-variant shadow-sm flex flex-col justify-between transition-all">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-secondary">Most Popular</span>
+                <span class="text-[10px] font-bold bg-secondary-fixed text-secondary px-2 py-0.5 rounded-full">SAVE $39</span>
+              </div>
+              <h3 class="font-serif text-2xl text-on-surface mt-2">Duo Sanctuary Pack</h3>
+              <p class="text-xs text-on-surface-variant mt-1">2 Diffusers + 4 Organic Pods for Bedroom & Living Space</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between">
+              <span class="font-serif text-2xl font-bold text-on-surface">$219</span>
+              <span class="text-xs text-on-surface-variant line-through">$258</span>
+            </div>
+          </div>
+
+          <div onclick="selectBundle('trio', 299)" id="bundle-trio" class="cursor-pointer rounded-3xl bg-surface-container-lowest p-6 border-2 border-transparent hover:border-outline-variant shadow-sm flex flex-col justify-between transition-all">
+            <div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-outline">Complete Home</span>
+                <span class="text-[10px] font-bold bg-primary-fixed text-primary px-2 py-0.5 rounded-full">SAVE $88</span>
+              </div>
+              <h3 class="font-serif text-2xl text-on-surface mt-2">Whole Home Suite</h3>
+              <p class="text-xs text-on-surface-variant mt-1">3 Diffusers + 6 Organic Pods + Free Wall Mounts</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between">
+              <span class="font-serif text-2xl font-bold text-on-surface">$299</span>
+              <span class="text-xs text-on-surface-variant line-through">$387</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+     
+
+    <section class="w-full bg-surface py-16">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          
+          <div class="p-6 rounded-2xl bg-surface-container-low flex flex-col items-center">
+            <span class="material-symbols-outlined text-primary text-[32px] mb-3">lock</span>
+            <h3 class="font-serif text-xl text-on-surface">256-Bit SSL Encryption</h3>
+            <p class="text-xs text-on-surface-variant mt-2">
+              Your financial details are transmitted securely using bank-grade encrypted channels.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-surface-container-low flex flex-col items-center">
+            <span class="material-symbols-outlined text-secondary text-[32px] mb-3">local_shipping</span>
+            <p class="text-xs text-on-surface-variant mt-2">
+              Shipped via priority air express with full tracking updates delivered to your phone.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-surface-container-low flex flex-col items-center">
+            <span class="material-symbols-outlined text-primary text-[32px] mb-3">workspace_premium</span>
+            <h3 class="font-serif text-xl text-on-surface">2-Year Full Hardware Coverage</h3>
+            <p class="text-xs text-on-surface-variant mt-2">
+              Includes complimentary instant replacement if any manufacturing defect occurs.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  
+
+
+
+  </main>
+  <!-- GLOBAL FOOTER -->
+  <footer class="w-full bg-surface-container-low text-on-surface-variant">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12">
+        
+        <div class="space-y-4">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-primary">spa</span>
+            <span class="font-serif text-xl text-on-surface font-semibold">Aura Mist</span>
+          </div>
+          <p class="text-sm text-on-surface-variant">
+            Pioneering circadian wellness through organic cold mist infusion and biophilic illumination.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-on-surface mb-4 text-sm">Navigation</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-on-surface transition-colors">Home</a></li>
+            <li><a href="product.html" class="hover:text-on-surface transition-colors">Product Detail</a></li>
+            <li><a href="order.html" class="hover:text-on-surface transition-colors">Order Page</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-on-surface mb-4 text-sm">Support</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-on-surface transition-colors">30-Night Guarantee</a></li>
+            <li><a href="#" class="hover:text-on-surface transition-colors">2-Year Warranty</a></li>
+            <li><a href="#" class="hover:text-on-surface transition-colors">Help Center</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-on-surface mb-4 text-sm">Sensory Journal</h4>
+          <form class="space-y-2" onsubmit="event.preventDefault(); alert('Subscribed!');">
+            <input type="email" required placeholder="Enter your email" class="w-full px-4 py-2 rounded-full bg-surface text-sm border border-outline-variant focus:outline-none"/>
+            <button type="submit" class="w-full px-4 py-2 rounded-full bg-primary text-on-primary font-semibold text-sm hover:bg-primary-container transition-all">
+              Join Sanctuary
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-surface-container flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
+        <p>© 2026 Aura Mist Studio Inc. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-on-surface">Privacy Policy</a>
+          <a href="#" class="hover:text-on-surface">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
