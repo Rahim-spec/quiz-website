@@ -1,0 +1,107 @@
+/* Custom Scrollbar Styles */
+/*css for home page */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8faf6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c3c8c0;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #747872;
+}
+
+/* Custom Input Focus Ring */
+input:focus {
+  border-color: #445646 !important;
+}
+/*css for home page finsh here */
+
+/*css for product */
+/* Global Reset & Custom Scrollbar */
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8faf6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c3c8c0;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #747872;
+}
+
+/* Custom Input Focus Ring & Product Page Highlights */
+input:focus {
+  border-color: #445646 !important;
+}
+
+/* Table Hover Effects */
+table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+table tbody tr:hover {
+  background-color: #f3f4f0;
+}
+
+/* css for order now */
+/* Global Resets & Smooth Scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8faf6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c3c8c0;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #747872;
+}
+
+/* Form Inputs & Custom Focus Rings */
+input:focus, select:focus {
+  border-color: #445646 !important;
+  box-shadow: 0 0 0 2px rgba(68, 86, 70, 0.15);
+}
+
+/* Order Page Bundle Selector Active States */
+.bundle-active {
+  border-color: #445646 !important;
+  background-color: #f8faf6 !important;
+}
