@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aura Mist Studio — Smart Diffuser</title>
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#445646",
+            "on-primary": "#ffffff",
+            "primary-container": "#5c6e5d",
+            "primary-fixed": "#d4e8d3",
+            "secondary": "#8d4d38",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#fdaa8f",
+            "secondary-fixed": "#ffdbd0",
+            "surface": "#f8faf6",
+            "on-surface": "#191c1a",
+            "on-surface-variant": "#434842",
+            "surface-container": "#edeeeb",
+            "surface-container-low": "#f3f4f0",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e7e9e5",
+            "surface-variant": "#e1e3df",
+            "outline": "#747872"
+          },
+          fontFamily: {
+            display: ["EB Garamond", "serif"],
+            serif: ["EB Garamond", "serif"],
+            body: ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body class="bg-surface font-body text-on-surface antialiased">
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-sm">
+    <div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6">
+      
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 shrink-0">
+        <div class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-primary">
+          <span class="material-symbols-outlined text-[20px]">spa</span>
+        </div>
+        <div class="flex items-baseline gap-2">
+          <span class="font-serif text-2xl text-on-surface tracking-tight font-medium">Aura Mist</span>
+          <span class="text-[11px] uppercase tracking-widest text-primary font-semibold px-1.5 py-0.5 bg-primary-fixed rounded">STUDIO</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden xl:flex items-center gap-1">
+        <a href="index.html" class="px-3.5 py-2 rounded-full bg-surface-container text-primary font-semibold text-sm">Home</a>
+        <a href="product.html" class="px-3.5 py-2 rounded-full text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Product Detail</a>
+        <a href="order.html" class="px-3.5 py-2 rounded-full text-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors">Order Aura Mist</a>
+      </nav>
+
+      <!-- Cart & CTA -->
+      <div class="flex items-center gap-3 shrink-0">
+        <button type="button" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface text-sm transition-colors">
+          <span class="material-symbols-outlined text-[18px] text-primary">shopping_bag</span>
+          <span class="font-semibold">Cart (0)</span>
+        </button>
+
+        <a href="order.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-secondary text-on-secondary font-semibold text-sm shadow hover:bg-secondary/90 transition-all">
+          Get Aura Mist — $129
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="w-full pt-20">
+    <!-- Content sections will go here -->
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
